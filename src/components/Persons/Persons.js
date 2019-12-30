@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 
 import Person from "./Person/Person";
+import AuthContext from "../../context/auth-context"
 
 class Persons extends PureComponent {
   // static getDerivedStateFromProps(props, state) {
@@ -39,9 +40,7 @@ class Persons extends PureComponent {
 
   render() {
     console.log("[Persons.js] rendering...");
-    return;
-      {(context) =>
-        this.props.persons.map((person, index) => {
+    return (this.props.persons.map((person, index) => {
           return (
             <Person
               click={() => this.props.clicked(index)}
@@ -52,8 +51,7 @@ class Persons extends PureComponent {
             />
           );
         })
-      }
-      ;
+      );
   }
 }
 
